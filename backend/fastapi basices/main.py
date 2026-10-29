@@ -1,8 +1,12 @@
 from fastapi import FastAPI
-from mocdata import data
+from mocData import products
 
 app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Hello, World!"}
+    return {"message": "API is working"}
+
+@app.get("/products")
+def get_products():
+    return products
